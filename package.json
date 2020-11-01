@@ -1,0 +1,60 @@
+{
+  "name": "restmongo",
+  "version": "1.0.0",
+  "description": "API to retrieve transaction data for an account out of MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eval $(cat .env.dev) node server.js",
+    "docker": "eval $(cat .env.docker) node server.js",
+    "prod": "eval $(cat .env.prod) node server.js",
+    "test": "jest --coverage",
+    "start": "nodemon --exec ./node_modules/@babel/node/bin/babel-node.js server",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./ -s --ignore \"node_modules\"",
+    "build": "npm run clean && npm run build-server",
+    "start:prod": "node ./build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/Thought-Machine/TDP"
+  },
+  "keywords": [
+    "api",
+    "restful",
+    "json"
+  ],
+  "author": "IBM TM CoC",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.5",
+    "fluent-logger": "^3.4.1",
+    "js-yaml": "^3.14.0",
+    "mongoose": "^5.6.5",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.8.0",
+    "mockdate": "^2.0.5",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  }
+}
